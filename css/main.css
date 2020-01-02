@@ -1,0 +1,70 @@
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+}
+.container {
+  height: 100vh;
+  display: grid;
+  /* grid-gap: 10px; */
+  grid-template-columns: [c-inicio] 220px [c-panel-1] 1fr [c-hero-1] 1fr [c-hero-2] 1fr [c-fin];
+  grid-template-rows:
+    [r-inicio] minmax(30px, 60px) [r-panel-1] 1fr [r-panel-2] minmax(
+      70px,
+      100px
+    )
+    [r-fin];
+  grid-auto-flow: row;
+  /*grid-area: "header header header header" "panel hero hero hero"  "panel hero hero hero"  ". hero hero hero"  "footer footer footer footer" ;*/
+}
+.item {
+  display: grid;
+  background: cadetblue;
+}
+.item p {
+  align-self: center;
+}
+.header {
+  /*grid-area: header;*/
+  /* background: rosybrown; */
+  grid-column: c-inicio / c-fin;
+  grid-row: r-inicio / r-panel-1;
+  display: flex;
+  flex-direction: row;
+}
+.header ol {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+.link_to {
+  /* text-align: center;
+  align-self: stretch;
+  vertical-align: center; */
+  margin: 0px;
+  width: 150px;
+  height: auto;
+  flex-shrink: 0;
+  border: 1px solid blue;
+  background-color: crimson;
+}
+.menu .link_to:hover {
+  color: purple;
+}
+.hero {
+  /*grid-area: hero;*/
+  grid-column: c-panel-1 / c-fin;
+  grid-row: r-panel-1 / r-panel-2;
+  background: rebeccapurple;
+}
+.panel {
+  /*grid-area: panel;*/
+  grid-column: c-inicio / c-panel-1;
+  grid-row: r-panel-1 / r-panel-2;
+  background: seagreen;
+}
+.footer {
+  grid-column: c-inicio / c-fin;
+  grid-row: r-panel-2 / r-fin-2;
+  background: sienna;
+  /*grid-area: footer;*/
+}
